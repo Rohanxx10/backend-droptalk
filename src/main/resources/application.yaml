@@ -35,4 +35,7 @@ backblaze:
   bucket-name: ${BACKBLAZE_BUCKET_NAME}
   bucket-id: ${BUCKET_ID}
 
+server:
+  port: ${PORT:8080}
+
 
