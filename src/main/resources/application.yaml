@@ -1,0 +1,38 @@
+spring:
+  application:
+    name: chat-app
+
+  datasource:
+    url: ${DATASOURCE_URL}
+    username: ${DATASOURCE_USER}
+    password: ${DATASOURCE_PASSWORD}
+
+  servlet:
+    multipart:
+      max-file-size: 50MB
+      max-request-size: 50MB
+
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: true
+
+file:
+  upload-dir: C:/Users/Hp/OneDrive/Pictures/
+
+app:
+  base_url: ${BASE_URL}
+  api-version: v1
+  title: api/${app.api-version}
+  cross-origin: ${APP_CORS_ORIGINS}
+
+backblaze:
+  key-id: ${BACKBLAZE_KEY_ID}
+  application-key: ${BACKBLAZE_APPLICATION_ID}
+  bucket-name: ${BACKBLAZE_BUCKET_NAME}
+  bucket-id: ${BUCKET_ID}
+
+
