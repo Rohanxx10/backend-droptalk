@@ -34,6 +34,7 @@ public class WebSecurityConfig {
         return http.csrf(csrf->csrf.disable())
                 .cors(Customizer.withDefaults())
                 .authorizeHttpRequests(auth->auth
+                    .requestMatchers(org.springframework.http.HttpMethod.OPTIONS, "/**").permitAll()
                         .requestMatchers("/api/v1/create-user").permitAll()
                         .requestMatchers("/api/v1/login-user").permitAll()
                         .requestMatchers("/api/v1/test").permitAll()
