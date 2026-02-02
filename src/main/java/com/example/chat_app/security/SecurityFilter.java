@@ -35,9 +35,15 @@ public class SecurityFilter extends OncePerRequestFilter {
     }
 
     @Override
-    protected boolean shouldNotFilter(HttpServletRequest request) {
-        return request.getServletPath().equals("/token-validation");
-    }
+protected boolean shouldNotFilter(HttpServletRequest request) {
+    String path = request.getServletPath();
+
+    return path.equals("/api/v1/create-user")
+        || path.equals("/api/v1/login-user")
+        || path.equals("/api/v1/isExist-user")
+        || path.equals("/api/v1/isExist-email");
+}
+
 
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
